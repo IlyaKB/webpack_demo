@@ -6,8 +6,7 @@ Webpack 4 - demo with Hot Module Replacement
 
 We need [Node.js](https://nodejs.org) to install and run scripts.
 
-## Install
-## npm run dev
+## Install and run
 
 Run next commands in your terminal:
 
