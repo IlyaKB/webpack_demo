@@ -7,9 +7,9 @@ import {f1} from './js/function1.js';
 
 console.log("Web App Started1!");
 
-if (NODE_ENV === 'development') { // TODO: Почему не преобразовывается в: if ('development' === 'development') {...} ?
+/*if (NODE_ENV === 'development') { // TODO: Почему не преобразовывается в: if ('development' === 'development') {...} ?
     console.log("Mode set to development!");
-}
+}*/
 
 let class1 = new Class1();
 let class2lazy = null; // example, Editor
