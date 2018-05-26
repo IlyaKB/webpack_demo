@@ -7,10 +7,12 @@ module.exports = (env, options) => {
 
 	let oConfig = {
 		entry: {
-			main: "./webapp/src/index.js"
+			main: "./www/source/index.js"
 		},
 		output: {
-			path: path.resolve(__dirname, "./webapp/dist")
+			//path: path.resolve(__dirname, "./webapp/dist")
+			path: path.resolve(__dirname, "./www")
+			
 			,pathinfo: bDev
 			,filename: "[name].bundle.js" //,filename: "main.bundle.js"
 			//,chunkFilename: "[name].bundle.js"
@@ -21,7 +23,8 @@ module.exports = (env, options) => {
 		,module: {
 			rules: [
 				{
-					test: /\.js$/, loader: "babel-loader"
+					test: /\.js$/,
+					loader: "babel-loader"
 					,exclude: /node_modules/
 					,query: {
 						presets: [['es2015', {modules: false}]]
@@ -29,7 +32,8 @@ module.exports = (env, options) => {
 					}
 				},
 				{
-					test: /\.css$/, use: ["style-loader", "css-loader"]
+					test: /\.css$/,
+					use: ["style-loader", "css-loader"]
 				}
 			]
 		}
@@ -42,9 +46,13 @@ module.exports = (env, options) => {
 			new webpack.DefinePlugin({'NODE_ENV': JSON.stringify(options.mode)})
 		];
 		oConfig.devServer = {
-			host: "localhost", port: 8080
+			host: "localhost",
+			port: 8080
 			,hot: true
-			,contentBase: "./webapp/dist"
+			
+			//,contentBase: "./webapp/dist"
+			,contentBase: "./www"
+			
 			//,publicPath: "/"
 		};
 		oConfig.devtool = "eval";//"inline-source-map";
